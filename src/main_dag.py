@@ -14,16 +14,17 @@ default_args = {
 'depends_on_past': False,
 'start_date': datetime(2019, 8, 17),
 'email': ['rawatankit90@gmail.com'],
-'email_on_failure': False,
+'email_on_failure': True,
 'email_on_retry': False,
-'retries': 1,
+'retries': 3,
 'retry_delay': timedelta(minutes=5),
 'schedule_interval': '@daily',
 }
 
 dag = DAG('udac_example_dag',
           default_args=default_args,
-          description='Load and transform data in Redshift with Airflow'
+          description='Load and transform data in Redshift with Airflow',
+          catchup=False
           #schedule_interval='0 * * * *'
         )
 
