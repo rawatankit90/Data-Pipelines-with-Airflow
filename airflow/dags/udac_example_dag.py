@@ -10,21 +10,21 @@ from helpers import SqlQueries
 # AWS_SECRET = os.environ.get('AWS_SECRET')
 
 default_args = {
-'owner': 'ankit rawat',
-'depends_on_past': False,
-'start_date': datetime(2019, 8, 17),
-'email': ['rawatankit90@gmail.com'],
-'email_on_failure': True,
-'email_on_retry': False,
-'retries': 3,
-'retry_delay': timedelta(minutes=5),
-'schedule_interval': '@daily',
+    'owner': 'ankit rawat',
+    'depends_on_past': False,
+    'start_date': datetime(2019, 8, 17),
+    'email': ['rawatankit90@gmail.com'],
+    'email_on_failure': True,
+    'email_on_retry': False,
+    'retries': 3,
+    'retry_delay': timedelta(minutes=5),
+    'schedule_interval': '@daily',
+    'catchup': False,
 }
 
-dag = DAG('udac_example_dag',
+dag = DAG('data_pipeline',
           default_args=default_args,
-          description='Load and transform data in Redshift with Airflow',
-          catchup=False
+          description='Load and transform data in Redshift with Airflow'
           #schedule_interval='0 * * * *'
         )
 
