@@ -27,8 +27,6 @@
             Do not email on retry
 
         In addition, task dependencies are set as per the graph view follows the flow shown in the image below.
-||||||| merged common ancestors
-=======
 
  ![](Project%20Flow.JPG)
 
@@ -43,12 +41,11 @@
 *  Python
 *  JSON
 
+## How to run
 
-## How to run from local
-
-
-
-### A Quick :runner: of the flow  :point_down:
-
-
->>>>>>> f507ddeb9d64bdbe9e5c6eb22d1a0c06b679ab83
+*  start airflow server
+*  Start the Redshift server and note the details for creating connections
+*  create connections for aws and redshift. Name should be aws_credentials, redshift
+        ![](AirFlow%20Connection%201.JPG), ![](AirFlow%20Connection%201.JPG),![](AirFlow%20Connection%202.JPG)
+        ![](AirFlow%20Connection%203.JPG),![](AirFlow%20Connection%204.JPG),![](AirFlow%20Connection%205.JPG)
+*  Run the DAG
