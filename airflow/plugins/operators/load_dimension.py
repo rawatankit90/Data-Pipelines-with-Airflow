@@ -17,20 +17,20 @@ class LoadDimensionOperator(BaseOperator):
                COMMIT;
              """
 
-    
+
     @apply_defaults
     def __init__(self,
                  redshift_conn_id="",
                  reload="",
                  table="",
-                 load_sql_stmt="",
+                 sql_stmt="",
                  *args, **kwargs):
 
         super(LoadDimensionOperator, self).__init__(*args, **kwargs)
         self.redshift_conn_id = redshift_conn_id
         self.reload = reload
         self.table = table
-        self.load_sql_stmt = load_sql_stmt
+        self.sql_stmt = sql_stmt
 
     def execute(self, context):
         redshift = PostgresHook(postgres_conn_id=self.redshift_conn_id)
@@ -39,11 +39,11 @@ class LoadDimensionOperator(BaseOperator):
             formatted_sql = LoadDimensionOperator.reload_sql.format(
             self.table,
             self.table,
-            self.load_sql_stmt
+            self.sql_stmt
         )
         else:
             formatted_sql = LoadDimensionOperator.append_sql.format(
             self.table,
-            self.load_sql_stmt
+            self.sql_stmt
         )
         redshift.run(formatted_sql)

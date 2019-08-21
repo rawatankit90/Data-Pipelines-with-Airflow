@@ -35,8 +35,7 @@ class DataQualityOperator(BaseOperator):
             formatted_sql = DataQualityOperator.select_sql.format(row)
             records = redshift.get_records(formatted_sql)
             if len(records) < 1 :
-                self.log.info(f"Data quality check failed. {row} \
-                 returned no results")
+                self.log.info(f"Data quality check failed. {row} returned no results")
             else:
-                self.log.info(f"Data quality check passed. {row} \
-                returned {records} results")
+                self.log.info(f"Data quality check passed. {row} returned {records} results")
+        
