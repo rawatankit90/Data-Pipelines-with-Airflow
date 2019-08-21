@@ -27,3 +27,7 @@
             Do not email on retry
 
         In addition, task dependencies are set as per the graph view follows the flow shown in the image below.
+        
+        ![Alt text](Project Flow.JPG)
+         <img src="Project Flow.JPG">
+        
