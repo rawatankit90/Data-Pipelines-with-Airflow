@@ -29,4 +29,15 @@
         In addition, task dependencies are set as per the graph view follows the flow shown in the image below.
         
  ![](Project%20Flow.JPG)
-        
+  
+## Software 
+
+*  AWS S3, Redshift
+*  Python 3.6 with airflow
+
+## Programming languages
+
+*  SQL
+*  Python
+*  JSON
+  
