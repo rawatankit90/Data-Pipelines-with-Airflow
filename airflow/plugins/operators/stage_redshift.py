@@ -21,7 +21,6 @@ class StageToRedshiftOperator(BaseOperator):
                  s3_bucket="",
                  s3_key="",
                  json_path="",
-                 # file_type="",
                  delimiter=",",
                  ignore_headers=1,
                  *args, **kwargs):
@@ -32,13 +31,10 @@ class StageToRedshiftOperator(BaseOperator):
         self.s3_bucket = s3_bucket
         self.s3_key = s3_key
         self.json_path = json_path
-        # self.file_type = file_type
         self.aws_credentials_id = aws_credentials_id
         self.delimiter = delimiter
         self.ignore_headers = ignore_headers
-        # Map params here
-        # Example:
-        # self.conn_id = conn_id
+
 
     def execute(self, context):
         self.log.info('StageToRedshiftOperator implemented')
@@ -47,10 +43,9 @@ class StageToRedshiftOperator(BaseOperator):
         redshift = PostgresHook(postgres_conn_id=self.redshift_conn_id)
 
         self.log.info("Copying data from S3 to Redshift")
-        rendered_key = self.s3_key.format(**context)
+        self.log.info(self.s3_key)
+        rendered_key = self.s3_key
         s3_path = "s3://{}/{}".format(self.s3_bucket, rendered_key)
-
-        # if self.file_type == "json":
         formatted_sql = StageToRedshiftOperator.copy_sql.format(
                 self.table,
                 s3_path,
