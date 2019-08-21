@@ -27,14 +27,12 @@
             Do not email on retry
 
         In addition, task dependencies are set as per the graph view follows the flow shown in the image below.
-<<<<<<< HEAD
-        ![Screenshot](Project Flow.JPG)
 ||||||| merged common ancestors
 =======
-        
+
  ![](Project%20Flow.JPG)
-  
-## Software 
+
+## Software
 
 *  AWS S3, Redshift
 *  Python 3.6 with airflow
@@ -44,13 +42,13 @@
 *  SQL
 *  Python
 *  JSON
-  
-  
+
+
 ## How to run from local
 
 
 
 ### A Quick :runner: of the flow  :point_down:
- 
+
 
 >>>>>>> f507ddeb9d64bdbe9e5c6eb22d1a0c06b679ab83
