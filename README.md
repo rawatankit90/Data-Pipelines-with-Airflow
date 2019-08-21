@@ -8,7 +8,7 @@
  creating custom operators to perform tasks such as staging the data,
  filling the data warehouse, and running checks on the data as the final step.
 
-# Datasets
+## Datasets
 
  For this project, s3 links for the datasets are as belows
 
@@ -16,7 +16,7 @@
      Song data: s3://udacity-dend/song_data
 
 
-# Configuring the DAG
+## Configuring the DAG
 
         In the DAG, default parameters are added as per below
 
@@ -48,4 +48,8 @@
 *  create connections for aws and redshift. Name should be aws_credentials, redshift
         ![](AirFlow%20Connection%201.JPG), ![](AirFlow%20Connection%201.JPG),![](AirFlow%20Connection%202.JPG)
         ![](AirFlow%20Connection%203.JPG),![](AirFlow%20Connection%204.JPG),![](AirFlow%20Connection%205.JPG)
-*  Run the DAG
+* Run the DAG
+* After the DAG is completed, all tasks will be marked as green
+        ![](DAG%20Success.JPG)
+
+## Code Walkthrough
