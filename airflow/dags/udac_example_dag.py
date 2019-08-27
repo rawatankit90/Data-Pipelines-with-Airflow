@@ -14,9 +14,9 @@ default_args = {
 'email': ['rawatankit90@gmail.com'],
 'email_on_failure': True,
 'email_on_retry': False,
-'retries': 0,
+'retries': 3,
 'retry_delay': timedelta(minutes=5),
-'schedule_interval': '@daily',
+'schedule_interval': '@hourly',
 }
 
 dag = DAG('udac_example_dag2',
